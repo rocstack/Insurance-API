@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+
+  app:
+    build: .
+    container_name: app
+    command: npm start
+    volumes:
+      - .:/home/node/app
+    ports:
+      - 3000:3000
+
+  # mongo:
+  #   image: mongo:4.2.6
+  #   restart: always
+  #   container_name: mongodb-server
+  #   ports:
+  #     - 27017:27017
+  #   volumes:
+  #     - ./data/db:/data/db
