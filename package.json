@@ -19,10 +19,16 @@
   },
   "homepage": "https://github.com/rocstack/Insurance-API#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-validator": "^6.5.0",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.19"
   },
   "devDependencies": {
     "@types/express": "^4.17.6",
+    "@types/express-validator": "^3.0.0",
+    "@types/mongodb": "^3.5.23",
+    "@types/mongoose": "^5.7.27",
     "@types/node": "^14.0.13",
     "nodemon": "^2.0.4"
   }
