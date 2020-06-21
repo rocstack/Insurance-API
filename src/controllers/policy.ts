@@ -1,5 +1,8 @@
 import { RequestHandler } from 'express';
 
+// import { PolicyDocument } from '../models/policy';
+import SingleTrip from '../models/single-trip';
+
 type RequestBody = {
   type: string;
   area: string;
@@ -22,7 +25,22 @@ export const postCreatePolicy: RequestHandler = async (req, res, next) => {
     ages,
   } = req.body as RequestBody;
 
+  // Build policy
+  const policy = new SingleTrip({
+    type,
+    area,
+    product,
+    relationship,
+    startDate,
+    endDate,
+  });
 
+  try {
+    await policy.generatePolicyNumber();
+    // await policy.save();
+    res.json(policy);
+  } catch (err) {
+    next(err);
+  }
 
-  res.send('hi');
 };

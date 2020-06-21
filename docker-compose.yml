@@ -11,11 +11,11 @@ services:
     ports:
       - 3000:3000
 
-  # mongo:
-  #   image: mongo:4.2.6
-  #   restart: always
-  #   container_name: mongodb-server
-  #   ports:
-  #     - 27017:27017
-  #   volumes:
-  #     - ./data/db:/data/db
+  mongo:
+    image: mongo:4.2.6
+    restart: always
+    container_name: mongodb-server
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/db:/data/db

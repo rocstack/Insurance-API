@@ -25,6 +25,7 @@
     "mongoose": "^5.9.19"
   },
   "devDependencies": {
+    "@typegoose/typegoose": "^7.2.0",
     "@types/express": "^4.17.6",
     "@types/express-validator": "^3.0.0",
     "@types/mongodb": "^3.5.23",
