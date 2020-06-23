@@ -1,7 +1,7 @@
 import { RequestHandler } from 'express';
 
-// import { PolicyDocument } from '../models/policy';
 import SingleTrip from '../models/single-trip';
+
 
 type RequestBody = {
   type: string;
@@ -37,6 +37,9 @@ export const postCreatePolicy: RequestHandler = async (req, res, next) => {
 
   try {
     await policy.generatePolicyNumber();
+    await policy.calcTripDuration();
+    await policy.calculateAgeBands(ages);
+
     // await policy.save();
     res.json(policy);
   } catch (err) {
